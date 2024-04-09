@@ -1,12 +1,13 @@
 pipeline {
-  agent any
+  agent { label 'sonar-node' }
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
   stages {
-    stage('Build') {
+    stage('Scan') {
       steps {
-        sh './mvnw clean install site surefire-report:report'
+        withSonarQubeEnv('sonar-server') {
+          sh 'mvn clean package sonar:sonar'
       }
     }
   }

@@ -1,13 +1,16 @@
 
 pipeline {
     agent { label 'sonar-node' }
+    environment {
+        JENKINS_NODE_COOKIE=do_not_kill
+    }
     stages {
         stage('Build') { 
             steps {
-                //sh 'mvn clean'
-                sh 'mvn -B -DskipTests clean package &'
-                //sh 'java -jar target/*.jar &'
-                sh 'java -jar target/spring-petclinic-3.2.0-SNAPSHOT.jar'
+                    //sh 'mvn clean'
+                    sh 'mvn -B -DskipTests clean package'
+                    //sh 'java -jar target/*.jar &'
+                    sh 'java -jar target/spring-petclinic-3.2.0-SNAPSHOT.jar &'
             }
         }
     }

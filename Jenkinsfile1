@@ -1,1 +1,21 @@
 
+pipeline {
+  agent { label 'sonar-node' }
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+  }
+  stages {
+    stage('Build') { 
+            steps {
+                sh 'cd spring-petclinic'
+                sh './mvnw package'
+            }
+        }
+
+    stage('Run') { 
+            steps {
+                sh 'java -jar target/*.jar'
+            }
+        }
+}
+}

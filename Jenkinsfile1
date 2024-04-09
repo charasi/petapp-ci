@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh 'mvn clean'
                 sh 'mvn -B -DskipTests clean package'
-                sh 'java -jar target/*.jar'
+                sh 'java -jar target/*.jar &'
             }
         }
     }

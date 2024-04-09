@@ -3,13 +3,15 @@ pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
-  stages {
-    stage('Scan') {
-      steps {
-        withSonarQubeEnv(installationName: 'sonar-server') {
-          sh 'mvn clean sonar:sonar'
-      }
-    }
-  }
-}
+  stage("Compile"){
+            steps{
+                sh "mvn clean compile"
+            }
+        }
+        
+         stage("Test Cases"){
+            steps{
+                sh "mvn test"
+            }
+        }
 }

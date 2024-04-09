@@ -7,7 +7,6 @@ pipeline {
     stage('Build') {
       steps {
         sh './mvnw clean install site surefire-report:report'
-        sh 'tree'
       }
     }
   }

@@ -2,7 +2,7 @@
 pipeline {
     agent { label 'sonar-node' }
     environment {
-        JENKINS_NODE_COOKIE=do_not_kill
+        JENKINS_NODE_COOKIE='do_not_kill'
     }
     stages {
         stage('Build') { 

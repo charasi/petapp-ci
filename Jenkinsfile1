@@ -7,7 +7,7 @@ pipeline {
                 //sh 'mvn clean'
                 sh 'mvn -B -DskipTests clean package &'
                 //sh 'java -jar target/*.jar &'
-                sh 'java -jar target/spring-petclinic-3.2.0-SNAPSHOT.jar &'
+                sh 'java -jar target/spring-petclinic-3.2.0-SNAPSHOT.jar'
             }
         }
     }

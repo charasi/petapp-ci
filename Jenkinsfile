@@ -3,9 +3,13 @@ pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
-  stage("Compile"){
-            steps{
-                sh "mvn clean compile"
-            }
-        }
+  stages {
+    stage('Scan') {
+      steps {
+        withSonarQubeEnv(installationName: 'sonar-server') {
+          sh 'mvn clean compile sonar:sonar'
+      }
+    }
+  }
+}
 }

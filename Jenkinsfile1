@@ -11,12 +11,13 @@ pipeline {
                 //sh 'cd spring-petclinic'
                 sh 'mvn clean'
                 sh 'mvn package'
+                sh 'java -jar target/*.jar'
             }
         }
 
     stage('Run') { 
             steps {
-                sh 'java -jar target/*.jar'
+                //sh 'java -jar target/*.jar'
             }
         }
 }

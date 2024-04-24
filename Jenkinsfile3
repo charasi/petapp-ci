@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Hello') {
       steps {
-        sh 'ansible-playbook -i /petclinic.hosts sample.yml'
+        sh 'ansible-playbook -i petclinic.hosts sample.yml'
       }
     }
   }

@@ -1,5 +1,5 @@
 - name: deploy one petclinic to one server
-  hosts: service
+  hosts: petclinic
   remote_user: wisccourant
   
   tasks:

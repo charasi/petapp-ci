@@ -1,0 +1,9 @@
+- name: deploy one petclinic to one server
+  hosts: service
+  remote_user: wisccourant
+  
+  tasks:
+  - name: echo command
+    shell: echo "YESS"
+    args:
+      executable: /bin/bash

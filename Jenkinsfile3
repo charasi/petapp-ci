@@ -1,5 +1,5 @@
 pipeline {
-  agent { label 'any' }
+  agent { label 'Built-In Node' }
   environment {
    ANSIBLE_PRIVATE_KEY=credentials('mariah-db') 
   }

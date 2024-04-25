@@ -1,5 +1,8 @@
 pipeline {
-  agent { label 'serve' }
+agent { label 'serve' }
+environment {
+        JENKINS_NODE_COOKIE='do_not_kill'
+    }
   stages {
     stage('Hello') {
       steps {

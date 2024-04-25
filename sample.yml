@@ -1,6 +1,6 @@
 - name: deploy one petclinic to one server
-  hosts: service
-  remote_user: vagrant
+  hosts: petclinic
+  remote_user: jenkins
 
   tasks:
   - name: copy the jar file to target host

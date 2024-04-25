@@ -6,7 +6,7 @@
   - name: copy the jar file to target host
     copy:
       src: /home/wisccourant/jenkins/workspace/ans1/target/spring-petclinic-3.2.0-SNAPSHOT.jar.original
-      dest: ./petclinic.jar
+      dest: /home/wisccourant/jenkins
   - name: run the jar file
     shell: nohup java -jar petclinic.jar &
     args:

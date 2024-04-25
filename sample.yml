@@ -8,6 +8,6 @@
       src: /home/wisccourant/jenkins/workspace/ans1/target/spring-petclinic-3.2.0-SNAPSHOT.jar.original
       dest: /home/wisccourant/jenkins
   - name: run the jar file
-    shell: nohup java -jar petclinic.jar &
+    shell: nohup java -jar target/*.jar &
     args:
       executable: /bin/bash

@@ -5,7 +5,7 @@
   tasks:
   - name: copy the jar file to target host
     copy:
-      src: /home/wisccourant/jenkins/workspace/ans1/target/spring-petclinic-3.2.0-SNAPSHOT.jar
+      src: /home/wisccourant/jenkins/workspace/ansible/target/spring-petclinic-3.2.0-SNAPSHOT.jar
       dest: /home/jenkins
   - name: run the jar file
     shell: java -jar /home/jenkins/petclinic.jar &

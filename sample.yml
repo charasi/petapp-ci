@@ -8,6 +8,6 @@
       src: /home/wisccourant/jenkins/workspace/ansible/target/spring-petclinic-3.2.0-SNAPSHOT.jar
       dest: /home/jenkins
   - name: run the jar file
-    shell: java -jar /home/jenkins/petclinic.jar &
+    shell: java -jar /home/jenkins/spring-petclinic-3.2.0-SNAPSHOT.jar &
     args:
       executable: /bin/bash

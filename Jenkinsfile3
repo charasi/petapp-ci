@@ -1,5 +1,5 @@
 pipeline {
-agent { label 'serve' }
+agent { label 'production-server' }
 environment {
         JENKINS_NODE_COOKIE='do_not_kill'
     }

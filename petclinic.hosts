@@ -2,4 +2,4 @@
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 
 [petclinic]
-petclinic ansible_ssh_host=3.226.101.21 ansible_ssh_port=22 ansible_user=ubuntu
+petclinic ansible_ssh_host=52.0.108.48 ansible_ssh_port=22 ansible_user=ubuntu

@@ -2,13 +2,12 @@ pipeline {
 agent { label 'production-server' }
 environment {
         JENKINS_NODE_COOKIE='do_not_kill'
-        ANSIBLE_PRIVATE_KEY=credentials('social-pem') 
     }
   stages {
     stage('Hello') {
       steps {
         sh 'mvn -B -DskipTests clean package'
-        sh 'ansible-playbook -i petclinic.hosts --private-key=$ANSIBLE_PRIVATE_KEY sample.yml'
+        sh 'ansible-playbook -i petclinic.hosts sample.yml'
       }
     }
   }

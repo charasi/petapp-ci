@@ -5,7 +5,7 @@
   tasks:
   - name: copy the jar file to target host
     copy:
-      src: /home/ubuntu/workspace/test/spring-petclinic-3.2.0-SNAPSHOT.jar
+      src: /home/ubuntu/workspace/test/target/spring-petclinic-3.2.0-SNAPSHOT.jar
       dest: /home/ubuntu
   - name: run the jar file
     shell: nohup java -jar /home/ubuntu/spring-petclinic-3.2.0-SNAPSHOT.jar &

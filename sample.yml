@@ -1,13 +1,13 @@
 - name: deploy one petclinic to one server
   hosts: petclinic
-  remote_user: jenkins
+  remote_user: ubuntu
 
   tasks:
   - name: copy the jar file to target host
     copy:
-      src: /home/wisccourant/jenkins/workspace/ansible/target/spring-petclinic-3.2.0-SNAPSHOT.jar
-      dest: /home/jenkins
+      src: /home/ubuntu/workspace/ansible/target/spring-petclinic-3.2.0-SNAPSHOT.jar
+      dest: /home/ubuntu
   - name: run the jar file
-    shell: nohup java -jar /home/jenkins/spring-petclinic-3.2.0-SNAPSHOT.jar &
+    shell: nohup java -jar /home/ubuntu/spring-petclinic-3.2.0-SNAPSHOT.jar &
     args:
       executable: /bin/bash
